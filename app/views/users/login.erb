@@ -1,2 +1,12 @@
-LOGIN.ERB
-Here goes the form to log in
+<h4>Please enter your credentials below to Log In:</h4>
+</br>
+
+<form action="/login" method="POST">
+  <label for="email">Email: </label>
+  <input type="text" name="email">
+  </br>
+  <label for="password">Password: </label>
+  <input type="text" name="password">
+  <br></br>
+  <input type="submit" value="Log In">
+</form>
