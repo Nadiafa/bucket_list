@@ -8,4 +8,9 @@ class UsersController < ApplicationController
     erb :'users/signup'
   end
 
+  get '/logout' do
+    session.clear
+    redirect "/"
+  end
+
 end
