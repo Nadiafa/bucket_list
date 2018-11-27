@@ -63,7 +63,7 @@
 	- helpers `#logged_in?` and `#current_user` 
 		- Added helper methods `#logged_in?` and `#current_user`
 	- add your login/signup/signout routes
-		- **************** TODO
+		- Will have get/post login, get/post signup routes and views, and get logout route in the UsersController
 
 7. Build out controller routes for other models
 	- add a controller for each model
@@ -72,18 +72,21 @@
 8. Build views and controller actions based on the flow of your app, one step at a time, testing as you go.
 	- use `shotgun` and `pry` (or `raise`/`inspect`) all the time! 
 		- shotgun and pry are installed and I have included a rake console task for testing
+		- UserController: Created get/post login, get/post signup routes and views, and get logout route
+		- **************** TODO
 
 #### Using the corneal gem
 
 9. You are welcome to use the [corneal gem].
 	- [Corneal gem]
+		- Tidied up Corneal's prepopulated welcome.erb and added login and signup links
 	- Remove any folders and file you are not using
 		- Used Corneal to create dir structure, create models and migration tables
 	
 
 
-<!-- **************** TODO:  Tidy up Corneal's prepopulated layout and welcome (I want to add links like we did w Live Project Build) -->
-<!-- **************** TODO:  Create login, signup and logout routes and views -->
+<!-- **************** TODO:  Tidy up Corneal's prepopulated layout (I want to add links like we did w Live Project Build) -->
+<!-- **************** DONE:  Create login, signup and logout routes and views -->
 <!-- **************** TODO:  Create user's page view (to go to after login or signup that shows user's Items and has links to Create, Edit, Delete, View All) -->
 <!-- **************** TODO:  Create a CreateItems (new) page view (to create new Items) -->
 <!-- **************** TODO:  Create a EditItems page view (to edit own Items) -->
