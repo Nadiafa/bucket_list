@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  get '/index' do 
+  get '/items' do 
     @items = Item.all 
     erb :'/items/index'
   end 
