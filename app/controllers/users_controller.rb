@@ -18,14 +18,15 @@ class UsersController < ApplicationController
     erb :'users/signup'
   end
 
-  post '/signup' do 
-    if params[:name] != "" && params[:username] != "" && params[:email] != "" && params[:password] != ""
-      @user = User.create(params)
-      session[:user_id] = @user.id 
-      redirect "/users/#{@user.id}"
-    else 
-      redirect "/signup"
-    end 
+  post '/users' do 
+    # find out how to redirect a user signing up using an email that already exists in the DB
+      if params[:name] != "" && params[:username] != "" && params[:email] != "" && params[:password] != ""
+        @user = User.create(params)
+        session[:user_id] = @user.id 
+        redirect "/users/#{@user.id}"
+      else 
+        redirect "/signup"
+      end 
   end 
 
   get '/logout' do
@@ -35,7 +36,11 @@ class UsersController < ApplicationController
 
   get '/users/:id' do 
     @user = User.find_by(id: params[:id])
-    erb :'users/show'
+    if logged_in?
+      erb :'users/show'
+    else
+      redirect "/"
+    end 
   end 
 
 end
