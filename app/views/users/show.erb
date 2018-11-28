@@ -7,7 +7,8 @@ Login and signup redirect the user here %>
 <%# List of User's Items will be listed here %>
 
 <% @user.items.each do |i|%>
-  <h5><%= i.title %></h5>
+  <h4><a href="/items/<%= i.id %>"><%= i.title %></a></h4>
   <p><%= i.description %></p>
-  <p><%= i.created_at%></p>
+  <small><%= i.created_at%></small>
+  </br>
 <% end %>
