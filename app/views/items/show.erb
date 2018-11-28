@@ -1,3 +1,8 @@
 <h4><%= @item.title%></h4>
 <p><%= @item.description%></p>
 <small><%= @item.title%> is in <%= @item.user.name %>'s bucket list since <%= @item.created_at%></small>
+
+<form action="/items/<%= @item.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
