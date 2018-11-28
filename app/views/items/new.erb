@@ -1,1 +1,11 @@
-NEW.ERB
+<h4>Please complete all fields below to create a new bucket list item</h4>
+
+<form action="/items" method="POST">
+  <label for="title">Title: </label>
+  <input type="text" name="title">
+  </br>
+  <label for="description">Description: </label>
+  <textarea style="width:auto; height:auto;" type="text" name="description"></textarea>
+  <br></br>
+  <input type="submit" value="Create">
+</form>
