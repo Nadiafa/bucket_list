@@ -7,6 +7,5 @@ Item.create(title: "Whale Watching", description: "I would like to see a whale u
 Item.create(title: "Learn pottery", description: "I would like to learn pottery", user_id: bert.id)
 
 # Use ActiveRecord to pre-associate data
-mary.items.create(title: "Mud bath", description: "I would like to take a mud bath")
 item = bert.items.build(title: "Pet Dog", description: " I would like to adopt a puppy")
 item.save
