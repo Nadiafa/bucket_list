@@ -1,1 +1,10 @@
-INDEX.ERB
+<h3>These are everyone's bucket list items</h3>
+
+<% @items.each do |i|%>
+  <h4><a href="/items/<%= i.id %>"><%= i.title%></a></h4>
+  <small>By: <strong><%= i.user.name %></strong>, On: <%= i.created_at%></small>
+  <p><%= i.description%></p>
+  </br>
+<% end %>
+
+
