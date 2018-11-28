@@ -16,6 +16,12 @@
   <body>
     <header>
       <a href="/">Home</a>
+      <% if logged_in? %>
+        <a href="#">Create New </a>
+        <a href="#">See All</a>
+        <a href="/logout">Log Out</a>
+      <% end %>
+
     </header>
     <div class="wrapper">
 
