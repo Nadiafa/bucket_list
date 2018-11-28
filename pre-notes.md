@@ -93,7 +93,9 @@
 <!-- **************** DONE:  Create item's page view (to go to after an Item is created or via link from the index or user's page) -->
 <!-- **************** DONE:  Create an index page (where all users' items will be listed and will include links to each Item) -->
 <!-- **************** TODO:  Add links to edit and delete for each owned Item -->
-
+<!-- **************** TODO:  Add conditions to what users can view/do depending on whether they are logged in -->
+<!-- **************** TODO:  STRETCH Add flash messages -->
+<!-- **************** TODO:  STRETCH Refactor/Check if I can add more helper methods -->
 
 
 
