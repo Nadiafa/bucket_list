@@ -88,11 +88,11 @@
 <!-- **************** TODO:  Tidy up Corneal's prepopulated layout (I want to add links like we did w Live Project Build) -->
 <!-- **************** DONE:  Create login, signup and logout routes and views -->
 <!-- **************** DONE:  Create user's page view (to go to after login or signup that shows user's Items and has links to Create, Log out, View All) -->
-<!-- **************** TODO:  Add links to edit and delete for each owned Item -->
-<!-- **************** TODO:  Create a CreateItems (new) page view (to create new Items) -->
-<!-- **************** TODO:  Create a EditItems page view (to edit own Items) -->
+<!-- **************** DONE:  Create a CreateItems (new) page view (to create new Items) -->
+<!-- **************** DONE:  Create a EditItems page view (to edit own Items) -->
 <!-- **************** DONE:  Create item's page view (to go to after an Item is created or via link from the index or user's page) -->
-<!-- **************** TODO:  Create an index page (where all users' items will be listed and will include links to each Item) -->
+<!-- **************** DONE:  Create an index page (where all users' items will be listed and will include links to each Item) -->
+<!-- **************** TODO:  Add links to edit and delete for each owned Item -->
 
 
 
