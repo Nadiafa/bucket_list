@@ -41,4 +41,14 @@ class ItemsController < ApplicationController
     end 
   end 
 
+  delete '/items/:id' do 
+    @item = Item.find(params[:id])
+    if @item.user == current_user
+      @item.destroy
+      redirect "/items"
+    else
+      redirect "/items"
+    end 
+  end 
+
 end
