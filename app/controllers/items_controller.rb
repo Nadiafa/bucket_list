@@ -10,44 +10,64 @@ class ItemsController < ApplicationController
   end 
 
   get '/new' do
-    erb :'items/new'
+    if logged_in?
+      erb :'items/new'
+    else 
+      redirect "/"
+    end 
   end 
 
   post '/items' do 
-    if params[:title] != "" && params[:description] != ""
-      @item = Item.create(title: params[:title], description: params[:description], user_id: current_user.id)
-      redirect "/items/#{@item.id}"        
-    else
-      redirect "/new"          
-    end
+    if logged_in?
+      if params[:title] != "" && params[:description] != ""
+        @item = Item.create(title: params[:title], description: params[:description], user_id: current_user.id)
+        redirect "/items/#{@item.id}"        
+      else
+        redirect "/new"          
+      end
+    else 
+      redirect "/"
+    end 
   end 
 
   get '/items/:id/edit' do
     @item = Item.find_by(id: params[:id])
-    if @item.user == current_user
-      erb :'items/edit'
+    if logged_in?
+      if @item.user == current_user
+        erb :'items/edit'
+      else 
+        redirect "/users/#{current_user.id}"
+      end
     else 
-      redirect "/users/#{current_user.id}"
+      redirect "/"
     end
   end
 
   patch '/items/:id' do 
     @item = Item.find(params[:id])
-    if @item.user == current_user
-      @item.update(title: params[:title], description: params[:description])
-      redirect "/items/#{@item.id}"
+    if logged_in?
+      if @item.user == current_user
+        @item.update(title: params[:title], description: params[:description])
+        redirect "/items/#{@item.id}"
+      else 
+        redirect "/items/#{current_user.id}"
+      end 
     else 
-      redirect "/items/#{current_user.id}"
-    end 
+      redirect "/"
+    end
   end 
 
   delete '/items/:id' do 
     @item = Item.find(params[:id])
-    if @item.user == current_user
-      @item.destroy
-      redirect "/items"
-    else
-      redirect "/items"
+    if logged_in?
+      if @item.user == current_user
+        @item.destroy
+        redirect "/items"
+      else
+        redirect "/items"
+      end 
+    else 
+      redirect "/"
     end 
   end 
 
