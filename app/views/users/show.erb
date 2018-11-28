@@ -9,5 +9,5 @@ Login and signup redirect the user here %>
 <% @user.items.each do |i|%>
   <h5><%= i.title %></h5>
   <p><%= i.description %></p>
-  <p></p><%= i.created_at%></p>
+  <p><%= i.created_at%></p>
 <% end %>
