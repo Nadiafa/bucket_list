@@ -22,4 +22,23 @@ class ItemsController < ApplicationController
     end
   end 
 
+  get '/items/:id/edit' do
+    @item = Item.find_by(id: params[:id])
+    if @item.user == current_user
+      erb :'items/edit'
+    else 
+      redirect "/users/#{current_user.id}"
+    end
+  end
+
+  patch '/items/:id' do 
+    @item = Item.find(params[:id])
+    if @item.user == current_user
+      @item.update(title: params[:title], description: params[:description])
+      redirect "/items/#{@item.id}"
+    else 
+      redirect "/items/#{current_user.id}"
+    end 
+  end 
+
 end
