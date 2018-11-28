@@ -17,8 +17,9 @@ Specs:
 - [x] Include user accounts with unique login attribute (username or email)
   - User has username and email. Email will be used as a unique identifier
   
-- [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
-
+- [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+  - With the ItemsController actions, the User can create, read, update, and delete Items.
+  
 - [ ] Ensure that users can't modify content created by other users
 
 - [ ] Include user input validations
