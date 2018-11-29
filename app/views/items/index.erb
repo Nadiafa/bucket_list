@@ -1,3 +1,7 @@
+<% elsif flash[:modify_restricted] %>
+  <h3><%= flash[:modify_restricted] %> </h3>
+<% end %>
+
 <h4>These are everyone's bucket list items</h4>
 
 <% @items.each do |i|%>
