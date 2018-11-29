@@ -94,7 +94,7 @@
 <!-- **************** DONE:  Create an index page (where all users' items will be listed and will include links to each Item) -->
 <!-- **************** DONE:  Add links to edit and delete for each owned Item -->
 <!-- **************** DONE:  Add conditions so what users can view/do depending on whether they are logged in -->
-<!-- **************** TODO:  STRETCH Add flash messages -->
+<!-- **************** DONE:  STRETCH Add flash messages -->
 <!-- **************** TODO:  STRETCH Refactor/Check if I can add more helper methods -->
 
 
