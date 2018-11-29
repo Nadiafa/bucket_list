@@ -10,7 +10,7 @@ Execute:
   First:  
     $ bundle install
   Then run local server:
-    $`rackup` 
+    $ rackup
     OR
     $ shotgun 
 
