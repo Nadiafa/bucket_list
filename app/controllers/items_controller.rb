@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  
   get '/items' do 
     @items = Item.all 
     erb :'items/index'
@@ -82,5 +83,4 @@ class ItemsController < ApplicationController
       redirect "/"
     end 
   end 
-
 end

@@ -1,6 +1,7 @@
-<h3><%= @user.name.capitalize %>, here is your bucket list!</h3>
+<h4><%= @user.name.capitalize %>, here is your bucket list!</h4>
 <small>(You can click on a specific item if you wish to edit or delete it)</small>
 <br></br>
+
 <% if @user.items.empty? %>
   <p>You have not created any bucket list items yet!</p>
   <p>Go ahead and create your first item or view others' for inspiration by following the links above.</p>

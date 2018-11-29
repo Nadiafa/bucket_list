@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   post '/users' do 
-    # find out how to redirect a user signing up using an email that already exists in the DB
       if params[:name] != "" && params[:username] != "" && params[:email] != "" && params[:password] != ""
         @user = User.create(params)
         session[:user_id] = @user.id 
@@ -58,5 +57,4 @@ class UsersController < ApplicationController
       redirect "/"
     end 
   end 
-
 end
