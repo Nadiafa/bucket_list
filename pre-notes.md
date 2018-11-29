@@ -72,8 +72,8 @@
 8. Build views and controller actions based on the flow of your app, one step at a time, testing as you go.
 	- use `shotgun` and `pry` (or `raise`/`inspect`) all the time! 
 		- shotgun and pry are installed and I have included a rake console task for testing
-		- UserController: Created get/post login, get/post signup routes and views, and get logout route
-		- **************** TODO
+		- UsersController: Created get/post login, get/post signup routes and views, and get logout route
+		- ItemsController: Created get/post and views to view all items, individual items, dreate, edit and delete own items.
 
 #### Using the corneal gem
 
@@ -92,7 +92,7 @@
 <!-- **************** DONE:  Create a EditItems page view (to edit own Items) -->
 <!-- **************** DONE:  Create item's page view (to go to after an Item is created or via link from the index or user's page) -->
 <!-- **************** DONE:  Create an index page (where all users' items will be listed and will include links to each Item) -->
-<!-- **************** TODO:  Add links to edit and delete for each owned Item -->
+<!-- **************** DONE:  Add links to edit and delete for each owned Item -->
 <!-- **************** DONE:  Add conditions so what users can view/do depending on whether they are logged in -->
 <!-- **************** TODO:  STRETCH Add flash messages -->
 <!-- **************** TODO:  STRETCH Refactor/Check if I can add more helper methods -->
