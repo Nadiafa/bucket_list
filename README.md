@@ -5,14 +5,14 @@ This Sinatra application allows users to view their and other users' bucket list
 ## Installation
 
 Clone from Github:
-    $ git clone git@github.com:Nadiafa/bucket_list.git
+    `$ git clone git@github.com:Nadiafa/bucket_list.git`
 Execute:
   First:  
-    $ bundle install
+    `$ bundle install`
   Then run local server:
-    $ rackup
+    `$ rackup`
     OR
-    $ shotgun 
+    `$ shotgun`
 
 
 ## Contributing
