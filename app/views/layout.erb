@@ -15,7 +15,6 @@
   </head>
   <body>
     <header>
-      
       <% if logged_in? %>
         <a href="/users/<%= current_user.id %>">My Items</a>
         <a href="/new">Create New Item</a>
@@ -26,8 +25,38 @@
         <a href='/signup'>Sign Up</a>
         <a href='/login'>Log In</a>
       <% end %>
-
     </header>
+
+    <div> 
+      <%if flash[:not_logged_in] %>
+        <h3><%= flash[:not_logged_in] %></h3>
+      <% elsif flash[:successful_login] %>
+        <h3><%= flash[:successful_login] %></h3>
+      <% elsif flash[:unsuccessful_login] %>
+        <h3><%= flash[:unsuccessful_login] %></h3>
+      <% elsif flash[:successful_signup] %>
+        <h3><%= flash[:successful_signup] %></h3>
+      <% elsif flash[:unsuccessful_signup] %>
+        <h3><%= flash[:unsuccessful_signup] %></h3>
+      <% elsif flash[:already_logged_in] %>
+        <h3><%= flash[:already_logged_in] %></h3>
+      <% elsif flash[:not_logged_in] %>
+        <h3><%= flash[:not_logged_in] %></h3>
+      <% elsif flash[:successful_logout] %>
+        <h3><%= flash[:successful_logout] %></h3>
+      <% elsif flash[:successful_create] %>
+        <h3><%= flash[:successful_create] %></h3>
+      <% elsif flash[:unsuccessful_create] %>
+        <h3><%= flash[:unsuccessful_create] %></h3>
+      <% elsif flash[:successful_edit] %>
+        <h3><%= flash[:successful_edit] %></h3>
+      <% elsif flash[:successful_delete] %>
+        <h3><%= flash[:successful_delete] %></h3>
+      <% elsif flash[:modify_restricted] %>
+        <h3><%= flash[:modify_restricted] %></h3>
+      <% end %>
+    </div>
+
     <div class="wrapper">
 
         <%= yield %>

@@ -1,9 +1,3 @@
-<% if flash[:successful_create] %>
-  <h3><%= flash[:successful_create] %> </h3>
-<% elsif flash[:successful_edit] %>
-  <h3><%= flash[:successful_edit] %> </h3>
-<% end %>
-
 <h4><%= @item.title%></h4>
 <p><%= @item.description%></p>
 <small><%= @item.title%> is in <%= @item.user.name %>'s bucket list since <%= @item.created_at%></small>

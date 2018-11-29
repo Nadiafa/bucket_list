@@ -1,15 +1,3 @@
-<% if flash[:already_logged_in] %>
-  <h3><%= flash[:already_logged_in] %> </h3>
-<% elsif flash[:successful_login] %>
-  <h3><%= flash[:successful_login] %> </h3>
-<% elsif flash[:successful_signup] %>
-  <h3><%= flash[:successful_signup] %> </h3>
-<% elsif flash[:modify_restricted] %>
-  <h3><%= flash[:modify_restricted] %> </h3>
-<% elsif flash[:successful_delete] %>
-  <h3><%= flash[:successful_delete] %> </h3>
-<% end %>
-
 <h4><%= @user.name.capitalize %>, here is your bucket list!</h4>
 <small>(You can click on a specific item if you wish to edit or delete it)</small>
 <br></br>
