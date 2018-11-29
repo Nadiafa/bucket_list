@@ -1,3 +1,11 @@
+<% if flash[:unsuccessful_login]%>
+  <h3><%= flash[:unsuccessful_login] %> </h3>
+<% end %>
+
+<% if flash[:successful_signup]%>
+  <h3><%= flash[:successful_signup] %> </h3>
+<% end %>
+
 <h4>Please enter your credentials below to Log In:</h4>
 </br>
 

@@ -1,3 +1,9 @@
+<% if flash[:successful_logout] %>
+  <h3><%= flash[:successful_logout] %> </h3>
+<% elsif flash[:not_logged_in] %>
+  <h3><%= flash[:not_logged_in] %> </h3>
+<% end %>
+
 <div class="container">
   <header>
     <img src="images/bucket-list.jpg" class="main-img">
