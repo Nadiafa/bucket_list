@@ -3,12 +3,11 @@
 <small><%= @item.title%> is in <%= @item.user.name %>'s bucket list since <%= @item.created_at%></small>
 
 <% if current_user == @item.user %>
-  <form action="items/<%= @item.id %>/edit %>" method="POST">
-    <input type="hidden" name="_method" value="PATCH">
-    <input type="submit" value="Edit">
+  <form action="/items/<%= @item.id %>/edit" method="GET">
+    <input type="submit" value="Edit Item">
   </form>
   <form action="/items/<%= @item.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete Item">
   </form>
 <% end %>
