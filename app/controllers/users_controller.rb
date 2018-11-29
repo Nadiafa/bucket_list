@@ -35,17 +35,17 @@ class UsersController < ApplicationController
   end
 
   post '/users' do 
-      if params[:name] != "" && params[:username] != "" && params[:email] != "" && params[:password] != ""
-        @user = User.create(params)
-        session[:user_id] = @user.id 
-        # flash message to say you have successfully signed up
-        flash[:successful_signup] = "You have successfully Signed Up!"
-        redirect "/users/#{@user.id}"
-      else 
-        # flash message to say you have NOT signed up + errors
-        flash[:unsuccessful_signup] = "We were unable to sign you up. Please try again."
-        redirect "/signup"
-      end 
+    @user = User.new(params)
+    if @user.save
+      session[:user_id] = @user.id 
+      # flash message to say you have successfully signed up
+      flash[:successful_signup] = "You have successfully Signed Up!"
+      redirect "/users/#{@user.id}"
+    else 
+      # flash message to say you have NOT signed up + errors
+      flash[:unsuccessful_signup] = "We were unable to sign you up. #{@user.errors.full_messages.to_sentence}."
+      redirect "/signup"
+    end
   end 
 
   get '/logout' do
