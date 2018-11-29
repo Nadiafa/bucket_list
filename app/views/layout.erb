@@ -17,7 +17,7 @@
     <header>
       
       <% if logged_in? %>
-        <a href='/login'>My Items</a>
+        <a href="/users/<%= current_user.id %>">My Items</a>
         <a href="/new">Create New Item</a>
         <a href="/items">See All Items</a>
         <a href="/logout">Log Out</a>
