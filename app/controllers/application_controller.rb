@@ -15,14 +15,14 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do 
-  # User/log in helpwer methods
+  # User/log in helper methods
     def logged_in?
       !!current_user
     end 
+    
     def current_user
       @current_user ||= User.find_by(id: session[:user_id])
     end
-  end
 
   # User/Item find by id helper method
     def set_user_found_by_id
@@ -53,5 +53,6 @@ class ApplicationController < Sinatra::Base
         flash[:modify_restricted] = "You can only modify your own items."
           redirect "/users/#{current_user.id}"
       end
-  end 
-end
+    end 
+  end
+end 
