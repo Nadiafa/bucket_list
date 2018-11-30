@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
 
   get '/login' do
-    if !logged_in?
-      erb :'users/login'
-    else
-      already_logged_in_redirect
-    end 
+    already_logged_in_redirect
+    erb :'users/login'
   end
 
   post '/login' do
@@ -21,11 +18,9 @@ class UsersController < ApplicationController
   end 
 
   get '/signup' do
-    if !logged_in?
-      erb :'users/signup'
-    else
-      already_logged_in_redirect
-    end 
+    already_logged_in_redirect
+    
+    erb :'users/signup'
   end
 
   post '/users' do 
@@ -42,16 +37,15 @@ class UsersController < ApplicationController
 
   get '/logout' do
     session.clear
-     flash[:successful_logout] = "You have successfully logged out!"
+    flash[:successful_logout] = "You have successfully logged out!"
     redirect "/"
   end
 
   get '/users/:id' do 
     set_user_found_by_id
-    if logged_in?
-      erb :'users/show'
-    else
-      not_logged_in_redirect
-    end 
+
+    not_logged_in_redirect
+    
+    erb :'users/show'
   end 
 end
