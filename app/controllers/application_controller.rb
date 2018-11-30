@@ -36,21 +36,21 @@ class ApplicationController < Sinatra::Base
   # Redirect and Flash message helper methods
     def already_logged_in_redirect
       if logged_in?
-        flash[:already_logged_in] = "You were already logged in!"
+        flash[:info] = "You were already logged in!"
         redirect "/users/#{current_user.id}"
       end
     end
 
     def not_logged_in_redirect
       if !logged_in?
-        flash[:not_logged_in] = "Please log in or sign up on order to proceed."
+        flash[:warning] = "Please log in or sign up on order to proceed."
         redirect "/"
       end 
     end
 
     def modify_restricted_redirect
       if @item.user != current_user
-        flash[:modify_restricted] = "You can only modify your own items."
+        flash[:warning] = "You can only modify your own items."
           redirect "/users/#{current_user.id}"
       end
     end 

@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      flash[:successful_login] = "You have successfully logged in!"
+      flash[:success] = "You have successfully logged in!"
       redirect "/users/#{@user.id}"
     else 
-      flash[:unsuccessful_login] = "Your credentials were invalid. Please try again."
+      flash[:warning] = "Your credentials were invalid. Please try again."
       redirect "/login"
     end
   end 
@@ -27,17 +27,17 @@ class UsersController < ApplicationController
     @user = User.new(params)
     if @user.save
       session[:user_id] = @user.id 
-      flash[:successful_signup] = "You have successfully Signed Up!"
+      flash[:success] = "You have successfully Signed Up!"
       redirect "/users/#{@user.id}"
     else 
-      flash[:unsuccessful_signup] = "We were unable to sign you up. #{@user.errors.full_messages.to_sentence}."
+      flash[:warning] = "We were unable to sign you up. #{@user.errors.full_messages.to_sentence}."
       redirect "/signup"
     end
   end 
 
   get '/logout' do
     session.clear
-    flash[:successful_logout] = "You have successfully logged out!"
+    flash[:success] = "You have successfully logged out!"
     redirect "/"
   end
 

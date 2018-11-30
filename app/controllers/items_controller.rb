@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 
   get '/items/:id' do 
     set_item_found_by_id
-    
+
     erb :'items/show'
   end 
 
@@ -22,10 +22,10 @@ class ItemsController < ApplicationController
 
     @item = Item.new(title: params[:title], description: params[:description], user_id: current_user.id)
     if @item.save
-      flash[:successful_create] = "You have successfully created a new Item!"
+      flash[:success] = "You have successfully created a new Item!"
       redirect "/items/#{@item.id}"        
     else
-      flash[:unsuccessful_create] = "We were unable to create a new Item. #{@item.errors.full_messages.to_sentence}"
+      flash[:warning] = "We were unable to create a new Item. #{@item.errors.full_messages.to_sentence}"
       redirect "/new"          
     end
   end 
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
     modify_restricted_redirect
 
     @item.update(title: params[:title], description: params[:description])
-    flash[:successful_edit] = "You have successfully edited this Item!"
+    flash[:success] = "You have successfully edited this Item!"
     redirect "/items/#{@item.id}" 
   end 
 
@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
     modify_restricted_redirect
 
     @item.destroy
-    flash[:successful_delete] = "You have successfully deleted this Item!"
+    flash[:success] = "You have successfully deleted this Item!"
     redirect "/users/#{current_user.id}"
   end 
 end
