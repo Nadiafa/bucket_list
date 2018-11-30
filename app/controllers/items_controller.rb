@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     if logged_in?
       if @item.user == current_user
         @item.update(title: params[:title], description: params[:description])
-        flash[:successful_edit] = "You have successfully edite this Item!"
+        flash[:successful_edit] = "You have successfully edited this Item!"
         redirect "/items/#{@item.id}"
       else 
         modify_restricted_redirect
