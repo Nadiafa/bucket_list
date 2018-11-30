@@ -4,8 +4,9 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      flash[:already_logged_in] = "You were already logged in!"
-      redirect "/users/#{current_user.id}"
+      # flash[:already_logged_in] = "You were already logged in!"
+      # redirect "/users/#{current_user.id}"
+      already_logged_in
     end 
   end
 
@@ -25,8 +26,9 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/signup'
     else
-      flash[:already_logged_in] = "You were already logged in!"
-      redirect "/users/#{current_user.id}"
+      # flash[:already_logged_in] = "You were already logged in!"
+      # redirect "/users/#{current_user.id}"
+      already_logged_in
     end 
   end
 
