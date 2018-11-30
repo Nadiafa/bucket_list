@@ -28,38 +28,12 @@
     </nav>
 
     <div class="flash-message"> 
-      <%if flash[:not_logged_in] %>
-        <img src="images/warning-48.png" class="warning">
-        <h3 class="warning"><%= flash[:not_logged_in] %></h3>
-      <% elsif flash[:successful_login] %>
-        <h3 class="confirmation"><%= flash[:successful_login] %></h3>
-      <% elsif flash[:unsuccessful_login] %>
-        <img src="images/warning-48.png" class="warning">
-        <h3 class="warning"><%= flash[:unsuccessful_login] %></h3>
-      <% elsif flash[:successful_signup] %>
-        <h3 class="confirmation"><%= flash[:successful_signup] %></h3>
-      <% elsif flash[:unsuccessful_signup] %>
-        <img src="images/warning-48.png" class="warning">
-        <h3 class="warning"><%= flash[:unsuccessful_signup] %></h3>
-      <% elsif flash[:already_logged_in] %>
-        <h3><%= flash[:already_logged_in] %></h3>
-      <% elsif flash[:not_logged_in] %>
-        <img src="images/warning-48.png" class="warning">
-        <h3 class="warning"><%= flash[:not_logged_in] %></h3>
-      <% elsif flash[:successful_logout] %>
-        <h3 class="confirmation"><%= flash[:successful_logout] %></h3>
-      <% elsif flash[:successful_create] %>
-        <h3 class="confirmation"><%= flash[:successful_create] %></h3>
-      <% elsif flash[:unsuccessful_create] %>
-        <img src="images/warning-48.png" class="warning">
-        <h3 class="warning"><%= flash[:unsuccessful_create] %></h3>
-      <% elsif flash[:successful_edit] %>
-        <h3 class="confirmation"><%= flash[:successful_edit] %></h3>
-      <% elsif flash[:successful_delete] %>
-        <h3 class="confirmation"><%= flash[:successful_delete] %></h3>
-      <% elsif flash[:modify_restricted] %>
-        <img src="images/warning-48.png" class="warning">
-        <h3 class="warning"><%= flash[:modify_restricted] %></h3>
+      <% if flash[:warning] %>
+        <h3 class="warning"><%= flash[:warning] %></h3>
+      <% elsif flash[:success] %>
+        <h3 class="confirmation"><%= flash[:success] %></h3>
+      <% elsif flash[:info] %>
+        <h3><%= flash[:info] %></h3>
       <% end %>
     </div>
 
