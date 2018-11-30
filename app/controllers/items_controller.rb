@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end 
 
   get '/items/:id' do 
-    @item = Item.find_by(id: params[:id])
+    set_item_found_by_id
     erb :'items/show'
   end 
 
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
   end 
 
   get '/items/:id/edit' do
-    @item = Item.find_by(id: params[:id])
+    set_item_found_by_id
     if logged_in?
       if @item.user == current_user
         erb :'items/edit'
@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
   end
 
   patch '/items/:id' do 
-    @item = Item.find(params[:id])
+    set_item_found_by_id
     if logged_in?
       if @item.user == current_user
         @item.update(title: params[:title], description: params[:description])
@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
   end 
 
   delete '/items/:id' do 
-    @item = Item.find(params[:id])
+    set_item_found_by_id
     if logged_in?
       if @item.user == current_user
         @item.destroy
