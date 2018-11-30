@@ -24,10 +24,17 @@ class ApplicationController < Sinatra::Base
   end
 
 ###
-  def already_logged_in
+  def already_logged_in_redirect
     if logged_in?
       flash[:already_logged_in] = "You were already logged in!"
       redirect "/users/#{current_user.id}"
     end
   end
+
+  def not_logged_in_redirect
+    if !logged_in?
+      flash[:not_logged_in] = "Please log in or sign up on order to proceed."
+      redirect "/"
+    end 
+  end 
 end

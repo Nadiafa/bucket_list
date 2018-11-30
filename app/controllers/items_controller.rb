@@ -14,8 +14,7 @@ class ItemsController < ApplicationController
     if logged_in?
       erb :'items/new'
     else 
-      flash[:not_logged_in] = "Please log in or sign up on order to proceed."
-      redirect "/"
+      not_logged_in_redirect
     end 
   end 
 
@@ -30,8 +29,7 @@ class ItemsController < ApplicationController
         redirect "/new"          
       end
     else 
-      flash[:not_logged_in] = "Please log in or sign up on order to proceed."
-      redirect "/"
+      not_logged_in_redirect
     end 
   end 
 
@@ -45,8 +43,7 @@ class ItemsController < ApplicationController
         redirect "/users/#{current_user.id}"
       end
     else 
-      flash[:not_logged_in] = "Please log in or sign up on order to proceed."
-      redirect "/"
+      not_logged_in_redirect
     end
   end
 
@@ -62,8 +59,7 @@ class ItemsController < ApplicationController
         redirect "/items/#{current_user.id}"
       end 
     else 
-      flash[:not_logged_in] = "Please log in or sign up on order to proceed."
-      redirect "/"
+      not_logged_in_redirect
     end
   end 
 
@@ -79,8 +75,7 @@ class ItemsController < ApplicationController
         redirect "/items"
       end 
     else 
-      flash[:not_logged_in] = "Please log in or sign up on order to proceed."
-      redirect "/"
+      not_logged_in_redirect
     end 
   end 
 end
