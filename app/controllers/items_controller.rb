@@ -20,12 +20,12 @@ class ItemsController < ApplicationController
 
   post '/items' do 
     if logged_in?
-      if params[:title] != "" && params[:description] != ""
-        @item = Item.create(title: params[:title], description: params[:description], user_id: current_user.id)
+      @item = Item.new(title: params[:title], description: params[:description], user_id: current_user.id)
+      if @item.save
         flash[:successful_create] = "You have successfully created a new Item!"
         redirect "/items/#{@item.id}"        
       else
-        flash[:unsuccessful_create] = "We were unable to create a new Item. Please try again."
+        flash[:unsuccessful_create] = "We were unable to create a new Item. #{@item.errors.full_messages.to_sentence}"
         redirect "/new"          
       end
     else 
