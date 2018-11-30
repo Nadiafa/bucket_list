@@ -39,8 +39,7 @@ class ItemsController < ApplicationController
       if @item.user == current_user
         erb :'items/edit'
       else 
-        flash[:modify_restricted] = "You can only modify your own items."
-        redirect "/users/#{current_user.id}"
+        modify_restricted_redirect
       end
     else 
       not_logged_in_redirect
@@ -55,8 +54,7 @@ class ItemsController < ApplicationController
         flash[:successful_edit] = "You have successfully edite this Item!"
         redirect "/items/#{@item.id}"
       else 
-        flash[:modify_restricted] = "You can only modify your own items."
-        redirect "/items/#{current_user.id}"
+        modify_restricted_redirect
       end 
     else 
       not_logged_in_redirect
@@ -71,8 +69,7 @@ class ItemsController < ApplicationController
         flash[:successful_delete] = "You have successfully deleted this Item!"
         redirect "/users/#{current_user.id}"
       else
-        flash[:modify_restricted] = "You can only modify your own items."
-        redirect "/items"
+        modify_restricted_redirect
       end 
     else 
       not_logged_in_redirect

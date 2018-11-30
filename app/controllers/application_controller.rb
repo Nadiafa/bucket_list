@@ -36,5 +36,12 @@ class ApplicationController < Sinatra::Base
       flash[:not_logged_in] = "Please log in or sign up on order to proceed."
       redirect "/"
     end 
+  end
+
+  def modify_restricted_redirect
+    if @item.user != current_user
+      flash[:modify_restricted] = "You can only modify your own items."
+        redirect "/users/#{current_user.id}"
+    end
   end 
 end
