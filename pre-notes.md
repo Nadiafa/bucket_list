@@ -95,7 +95,7 @@
 <!-- **************** DONE:  Add links to edit and delete for each owned Item -->
 <!-- **************** DONE:  Add conditions so what users can view/do depending on whether they are logged in -->
 <!-- **************** DONE:  STRETCH Add flash messages -->
-<!-- **************** TODO:  STRETCH Refactor/Check if I can add more helper methods -->
+<!-- **************** DONE:  STRETCH Refactor/Check if I can add more helper methods -->
 
 
 
